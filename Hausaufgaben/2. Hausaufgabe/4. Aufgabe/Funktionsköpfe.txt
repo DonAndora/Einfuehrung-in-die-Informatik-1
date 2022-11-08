@@ -1,0 +1,8 @@
+4. Aufgabe | Funktionsköpfe
+
+(Man kann natürlich auch "unsigned" nutzen...)
+
+1. 	unsinged int max_teiler(int a, int b) {... return teiler}
+2.	unsigned short day_in_year(int year) {... return days}
+3. 	double size_dreieck_90(float a, float b) {... return size}
+4. 	double exponent_2(doueble a) {... return a_2}

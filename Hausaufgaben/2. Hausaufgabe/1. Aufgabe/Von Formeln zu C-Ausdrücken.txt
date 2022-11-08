@@ -1,0 +1,7 @@
+1. Aufgabe | Von Formeln zu C-Ausdrücken
+
+
+1. double antwort_1 = a / c + b / d;
+2. double antwort_2 = a * a / (b-c) - 1/d;
+3. double antwort_3 = 3 * a - a/3
+4. double antwort_4 = a * a * a + 2 * a * b + c * c * c

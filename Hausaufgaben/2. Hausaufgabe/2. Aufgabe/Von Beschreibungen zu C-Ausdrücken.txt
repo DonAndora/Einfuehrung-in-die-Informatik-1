@@ -1,0 +1,8 @@
+2. Aufgabe | Von Beschreibungen zu C-Ausdrücken
+
+(Angenommen die Variablen wurden als Double definiert!)
+
+1. double xyz = x * y * z;
+2. double antwort_2 = b * b * b / 5;
+3. double antwort_3 = (a+b) * (c*d);
+4. double antwort_4 = x > 5;
