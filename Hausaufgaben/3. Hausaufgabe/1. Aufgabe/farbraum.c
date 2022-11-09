@@ -6,7 +6,7 @@ void color(double code)
     //Dabei wird überprüft, ob der eingegebene Winkel in den Bereich des Rot-, Grün-, Blau-, Gelb-, Cyan-, Magenta- oder Weißbereichs fällt.
     //Wenn ja, wird die Farbe ausgegeben!
 
-    if (code >= 0 && code < 30)
+    if (code >= 0 && code < 30 || code >= 330 && code <=360)
     {
         printf("Rot");
     }
@@ -29,10 +29,6 @@ void color(double code)
     else if (code >= 270 && code < 330)
     {
         printf("Magenta");
-    }
-    else if (code >= 330 && code <= 360)
-    {
-        printf("Rot");
     }
 }
 
