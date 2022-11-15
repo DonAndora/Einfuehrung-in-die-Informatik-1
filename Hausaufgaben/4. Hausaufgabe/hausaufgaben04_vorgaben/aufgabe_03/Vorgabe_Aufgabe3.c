@@ -9,6 +9,14 @@
  * Sie können davon ausgehen, dass -1 nicht als Wert im Array enthalten ist.
  */
 int findeDuplikat(int array[], int arrayLength) {
+    for (int i = 0; i < arrayLength; ++i) {
+        for (int j = i + 1; j < arrayLength; ++j) {
+            if (array[i] == array[j]) {
+                return array[i];
+            }
+        }
+    }
+    return -1;
 }
 
 /**

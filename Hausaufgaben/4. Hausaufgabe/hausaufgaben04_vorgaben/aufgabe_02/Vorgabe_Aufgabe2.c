@@ -17,6 +17,12 @@ int textlen(char text[]) {
  * Nun wird jeder Buchstabe von text um eine Position nach rechts und der letzte Buchstabe nach ganz vorne vorschoben.
  */
 void shiftStringOnce(char text[]) {
+    int len = textlen(text);
+    char lastChar = text[len - 1];
+    for (int i = len - 1; i > 0; --i) {
+        text[i] = text[i - 1];
+    }
+    text[0] = lastChar;
 }
 
 
@@ -25,6 +31,9 @@ void shiftStringOnce(char text[]) {
  * Nun wird der text um shift position nach rechts verschoben.
  */
 void shiftString(char text[], unsigned int shift) {
+    for (int i = 0; i < shift; ++i) {
+        shiftStringOnce(text);
+    }
 }
 
 /**
