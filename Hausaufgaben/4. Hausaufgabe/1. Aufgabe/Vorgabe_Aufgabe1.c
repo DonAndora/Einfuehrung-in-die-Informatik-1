@@ -6,18 +6,18 @@
 int main(void) {
     srand(time(0));
 
-    // Array fuer Zufallszahlen anlegen
-    int zufallszahlen[100];
+    // Array fuer 20 Zufallszahlen anlegen
+    int zufallszahlen[20];
 
 
-    // Zufallszahlen erzeugen
-    for (int i = 0; i < 100; i++) {
-        zufallszahlen[i] = rand() % 100;
+    // Zufallszahlen zwischen 0 und 100 erzeugen
+    for (int i = 0; i < 20; i++) {
+        zufallszahlen[i] = rand() % 101;
     }
 
 
     // Ausgabe des Arrays
-    for (int i = 0; i < 100; i++) {
+    for (int i = 0; i < 20; i++) {
         printf("%d ", zufallszahlen[i]);
     }
 }
