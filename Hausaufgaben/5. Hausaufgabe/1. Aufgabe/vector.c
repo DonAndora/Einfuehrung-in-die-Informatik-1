@@ -1,32 +1,87 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
+#include <math.h>
+
 
 char **storage;
 unsigned short capacity;
 
 void vector(unsigned short size)
 {
-	// ... Hier Ihr Code ...
+	storage = calloc(size, sizeof(char *));
+	capacity = size;
+	
+	if (storage == 0) {
+		exit(1);
+	}
+	for (int i = 0; i <= size - 1; i++) {
+		storage[i] = NULL;
+	}
 }
 
 void push(char *string)
 {
-	// ... Hier Ihr Code ...
+	for (int i = 0; i < capacity; i++) {
+		if(storage[i] == NULL) {
+			storage[i] = string;
+			return;
+		}
+		
+	}
+		char ** storage_alt;
+		capacity *= 2;
+		
+		storage_alt = calloc(capacity, sizeof(char*));
+		
+		if (storage_alt == NULL) {
+			exit(1);
+		}
+		for (int i = 0; i < capacity; i++) {
+			storage_alt[i] = NULL;
+		}
+		
+		for(int i = 0; i < capacity / 2; i++) {
+			storage_alt[i] = storage[i];
+		}
+		
+		storage_alt[(capacity / 2)] = string;
+		
+		free(storage);
+		
+		storage = storage_alt;
 }
 
 char* at(unsigned short index)
 {
-	// ... Hier Ihr Code ...
+	if (index > capacity)
+	{
+		return NULL;
+	}
+	else
+	{
+		return storage[index];
+	}
 }
 
 void set(unsigned short index, char *string)
 {
-	// ... Hier Ihr Code ...
+	if (capacity >= index) {
+		storage[index] = string;
+	}
 }
 
 unsigned short size(void)
 {
-	// ... Hier Ihr Code ...
+	unsigned short count = 0;
+	for (int i = 0; i < capacity; i++)
+	{
+		if (storage[i] != NULL)
+		{
+			count++;
+		}
+	}
+	return count;
 }
 
 int main(void)
