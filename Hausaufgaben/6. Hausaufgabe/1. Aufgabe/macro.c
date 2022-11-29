@@ -1,12 +1,16 @@
 #include <stdio.h>
 
-#define KM_TO_MILES(km) /*HIER CODE EINFUEGEN*/
+#define KM_TO_MILES(km) (km * 0.621371192)
 
 
-#define LINE(c) /*HIER CODE EINFUEGEN*/
+#define LINE(c)	for (int i = 0; i < 10; i++) \
+				{ \
+					printf("%c", c); \
+				} \
+				printf("\n");
 
 
-#define MOD2(zahl) /*HIER CODE EINFUEGEN*/
+#define MOD2(zahl) ((zahl) % 2)
 
 
 int main()
