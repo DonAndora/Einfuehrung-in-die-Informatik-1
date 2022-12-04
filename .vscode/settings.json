@@ -1,5 +1,8 @@
 {
     "files.associations": {
-        "time.h": "c"
+        "time.h": "c",
+        "cmath": "cpp",
+        "xutility": "cpp",
+        "ostream": "cpp"
     }
 }

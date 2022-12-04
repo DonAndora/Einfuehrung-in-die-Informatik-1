@@ -22,15 +22,41 @@ namespace printer {
 	void printDurchschnitt(float *messwerte, int anzahl)
 	{
 		// TODO: Durchschnittstemperatur auf der Konsole ausgeben
+		float durchschnitt = 0;
 
+		//Summe von *messwerte
+		for(int i = 0; i < anzahl; ++i) {
+			durchschnitt += messwerte[i];
+		}
+
+		//Durchschnitt berechnen
+		durchschnitt /= anzahl;
+
+
+		std::cout << "Durchschnittstemperatur: " << durchschnitt << " Grad Celsius" << std::endl;
 
 	}
 
 	void printAbweichung(float *messwerte, int anzahl)
 	{
 		// TODO: Abweichung auf der Konsole ausgeben
+		float summe = 0.0, term, term2 = 0.0;
 
-		
+		int i;
+
+		for(i = 0; i < anzahl; ++i)
+		{
+			summe += messwerte[i];
+		}
+
+		term = summe / anzahl;
+
+		for(i = 0; i < anzahl; ++i)
+			term2 += pow(messwerte[i] - term, 2);
+
+		float s = sqrt(term2 / anzahl);
+
+		std::cout << "Durchschnittstemperatur: " << s << " Grad Celsius" << std::endl;
 	}
 
 }
@@ -63,8 +89,8 @@ int main(void)
 	} while ( !(1 <= anzahl && anzahl <= 999) );
 
 	// TODO: Heapspeicher fuer Messwerte allozieren.
-	
-
+	messwerte = new float[anzahl];
+	orte = new std::string[anzahl]; //Habe auch einen für Orte erstellt... 
 
 	// Messwerte setzen
 	cout << "Bitte geben Sie nun abwechselnd die Messwerte (als Kommazahl, z.B. 13.7) und Orte (z.B. Berlin) ein." << endl;
@@ -79,13 +105,17 @@ int main(void)
 	}
 
 	// TODO: Konsolenausgaben durchfuehren
-	
+	printer::printArray(messwerte, orte, anzahl);
+	printer::printDurchschnitt(messwerte, anzahl);
+	printer::printAbweichung(messwerte, anzahl);
 
 
 	// TODO: Reservierten Speicher freigeben.
-
+	delete[] messwerte; 
+	delete[] orte; 
 
 
 	return 0;
 }
 
+// Ich denke, dass der Code recht selbsterklärend ist und habe deshalb fast keine Kommentare geschrueben.
