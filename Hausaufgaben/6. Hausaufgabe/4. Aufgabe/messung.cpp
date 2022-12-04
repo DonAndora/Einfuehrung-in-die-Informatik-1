@@ -40,7 +40,7 @@ namespace printer {
 	void printAbweichung(float *messwerte, int anzahl)
 	{
 		// TODO: Abweichung auf der Konsole ausgeben
-		float summe = 0.0, term, term2 = 0.0;
+		float summe = 0.0, term = 0.0, term2 = 0.0;
 
 		int i;
 
