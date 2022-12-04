@@ -3,6 +3,7 @@
         "time.h": "c",
         "cmath": "cpp",
         "xutility": "cpp",
-        "ostream": "cpp"
+        "ostream": "cpp",
+        "stdio.h": "c"
     }
 }
