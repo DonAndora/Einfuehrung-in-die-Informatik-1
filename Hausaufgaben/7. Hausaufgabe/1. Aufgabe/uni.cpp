@@ -28,26 +28,37 @@ int main()
 
 	// Studierende einlesen
 	for (int i = 0; i < n; i++) {
-		std::string nachname;
 		std::string vorname;
+		std::string nachname;
 		unsigned int matrikelnummer;
 
-		std::cout << "Bitte geben Sie den Nachnamen des " << i + 1 << ". Studierenden ein: ";
-		std::cin >> nachname;
 		std::cout << "Bitte geben Sie den Vornamen des " << i + 1 << ". Studierenden ein: ";
 		std::cin >> vorname;
+		std::cout << "Bitte geben Sie den Nachnamen des " << i + 1 << ". Studierenden ein: ";
+		std::cin >> nachname;
 		std::cout << "Bitte geben Sie die Matrikelnummer des " << i + 1 << ". Studierenden ein: ";
 		std::cin >> matrikelnummer;
 
-		// Stream-Status zuruecksetzen und bis zu 420 Zeichen leeren,
-		// falls der User unpassendes oder zu viel eingegeben hat.
+		// Stream-Status zurücksetzen und bis zu 420 Zeichen leeren
 		std::cin.clear();
 		std::cin.ignore(420, '\n');
 
-		// Studierendenobjekt auf dem Heap-Speicher erzeugen
+		// Studierenden auf dem Heap Speicher erzeugen
 		studierende[i] = new Studierender(nachname, vorname, matrikelnummer);
 
 		std::cout << std::endl;
+	}
+	
+	// Studierende ausgeben
+	for (int i = 0; i < n; ++i) {
+        std::cout << " " << std::endl;
+		std::cout << "Vorname: " << studierende[i]->vorname << std::endl;
+        std::cout << "Nachname: " << studierende[i]->nachname << std::endl;
+        std::cout << "Matrikelnummer: " << studierende[i]->matrikelnummer << std::endl;
+    }
 
-		
+	// Speicher freigeben
+    for (int i = 0; i < n; ++i) {
+        delete studierende[i];
+    }
 }
