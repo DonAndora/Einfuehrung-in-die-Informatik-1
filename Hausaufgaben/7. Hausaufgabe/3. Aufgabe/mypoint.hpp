@@ -13,12 +13,8 @@ public:
 
   // Ihr Code hier
 
-  double dist(MyPoint *q)
-  {
-    return sqrt(pow((q->x - x), 2) + pow((q->y - y), 2) + pow((q->z - z), 2));
-  };
-
-
+  double dist(MyPoint *q);
 
   void show();
+  
 };
